@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		115A3BFD227641F80012C02E /* Helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 115A3BFB227641F80012C02E /* Helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		115A3C04227642580012C02E /* UIViewLayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C03227642580012C02E /* UIViewLayoutHelpers.swift */; };
+		115A3C08227642FA0012C02E /* CGMultiplierExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C07227642FA0012C02E /* CGMultiplierExtensions.swift */; };
+		115A3C0A227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C09227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift */; };
+		115A3C0C227643620012C02E /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C0B227643620012C02E /* UIEdgeInsetsExtensions.swift */; };
+		115A3C0E227643800012C02E /* UIOffsetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C0D227643800012C02E /* UIOffsetExtensions.swift */; };
+		115A3C10227643920012C02E /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C0F227643920012C02E /* CGSizeExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		115A3BF8227641F80012C02E /* Helpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Helpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		115A3BFB227641F80012C02E /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		115A3BFC227641F80012C02E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		115A3C03227642580012C02E /* UIViewLayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLayoutHelpers.swift; sourceTree = "<group>"; };
+		115A3C07227642FA0012C02E /* CGMultiplierExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMultiplierExtensions.swift; sourceTree = "<group>"; };
+		115A3C09227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set<NSLayoutConstraint.Attribute>Extensions.swift"; sourceTree = "<group>"; };
+		115A3C0B227643620012C02E /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
+		115A3C0D227643800012C02E /* UIOffsetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOffsetExtensions.swift; sourceTree = "<group>"; };
+		115A3C0F227643920012C02E /* CGSizeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +58,24 @@
 		115A3BFA227641F80012C02E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				115A3C06227642DE0012C02E /* Layout Helpers */,
 				115A3BFB227641F80012C02E /* Helpers.h */,
 				115A3BFC227641F80012C02E /* Info.plist */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		115A3C06227642DE0012C02E /* Layout Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				115A3C03227642580012C02E /* UIViewLayoutHelpers.swift */,
+				115A3C07227642FA0012C02E /* CGMultiplierExtensions.swift */,
+				115A3C09227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift */,
+				115A3C0B227643620012C02E /* UIEdgeInsetsExtensions.swift */,
+				115A3C0D227643800012C02E /* UIOffsetExtensions.swift */,
+				115A3C0F227643920012C02E /* CGSizeExtensions.swift */,
+			);
+			path = "Layout Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +100,7 @@
 				115A3BF4227641F80012C02E /* Sources */,
 				115A3BF5227641F80012C02E /* Frameworks */,
 				115A3BF6227641F80012C02E /* Resources */,
+				115A3C052276429F0012C02E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -95,6 +122,7 @@
 				TargetAttributes = {
 					115A3BF7227641F80012C02E = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -125,11 +153,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		115A3C052276429F0012C02E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		115A3BF4227641F80012C02E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115A3C0C227643620012C02E /* UIEdgeInsetsExtensions.swift in Sources */,
+				115A3C08227642FA0012C02E /* CGMultiplierExtensions.swift in Sources */,
+				115A3C04227642580012C02E /* UIViewLayoutHelpers.swift in Sources */,
+				115A3C0A227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift in Sources */,
+				115A3C10227643920012C02E /* CGSizeExtensions.swift in Sources */,
+				115A3C0E227643800012C02E /* UIOffsetExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +315,7 @@
 		115A3C01227641F80012C02E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -269,6 +324,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Helpers/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -277,6 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.frank.Helpers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +342,7 @@
 		115A3C02227641F80012C02E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -293,6 +351,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Helpers/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
