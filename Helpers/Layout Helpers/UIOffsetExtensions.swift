@@ -7,7 +7,10 @@
 //
 
 public extension UIOffset {
-    init(h horizontal: CGFloat = 0, v vertical: CGFloat = 0) {
+    init(v vertical: CGFloat = 0, h horizontal: CGFloat) {
+        self.init(horizontal: horizontal, vertical: vertical)
+    }
+    init(h horizontal: CGFloat, v vertical: CGFloat = 0) {
         self.init(horizontal: horizontal, vertical: vertical)
     }
     init(_ both: CGFloat) {

@@ -8,8 +8,57 @@
 
 public extension UIView {
 
-    func addSubviews(_ views: UIView...) {
-        views.forEach { addSubview($0) }
+    func addSubview(_ view: UIView, completion: (UIView) -> Void) {
+        addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        completion(view)
+    }
+
+    func anchors(
+        _ anchors: Set<NSLayoutConstraint.Attribute>    = [],
+        top: NSLayoutYAxisAnchor?                       = nil,
+        topRelation: NSLayoutConstraint.Relation        = .equal,
+        left: NSLayoutXAxisAnchor?                      = nil,
+        leftRelation: NSLayoutConstraint.Relation       = .equal,
+        bottom: NSLayoutYAxisAnchor?                    = nil,
+        bottomRelation: NSLayoutConstraint.Relation     = .equal,
+        right: NSLayoutXAxisAnchor?                     = nil,
+        rightRelation: NSLayoutConstraint.Relation      = .equal,
+        padding: UIEdgeInsets                           = .zero,
+        centerX: NSLayoutXAxisAnchor?                   = nil,
+        centerXRelation: NSLayoutConstraint.Relation    = .equal,
+        centerY: NSLayoutYAxisAnchor?                   = nil,
+        centerYRelation: NSLayoutConstraint.Relation    = .equal,
+        offset: UIOffset                                = .zero,
+        width: NSLayoutDimension?                       = nil,
+        widthRelation: NSLayoutConstraint.Relation      = .equal,
+        height: NSLayoutDimension?                      = nil,
+        heightRelation: NSLayoutConstraint.Relation     = .equal,
+        multiplier: CGMultiplier                        = .one,
+        size: CGSize                                    = .zero) {
+        superview?.anchorView(
+            self,
+            anchors: anchors,
+            top: top,
+            topRelation: topRelation,
+            left: left,
+            leftRelation: leftRelation,
+            bottom: bottom,
+            bottomRelation: bottomRelation,
+            right: right,
+            rightRelation: rightRelation,
+            padding: padding,
+            centerX: centerX,
+            centerXRelation: centerXRelation,
+            centerY: centerY,
+            centerYRelation: centerYRelation,
+            offset: offset,
+            width: width,
+            widthRelation: widthRelation,
+            height: height,
+            heightRelation: heightRelation,
+            multiplier: multiplier,
+            size: size)
     }
 
     func addSubview(
@@ -38,28 +87,29 @@ public extension UIView {
 
         addSubview(view)
 
-        anchorView(view,
-                   anchors: anchors,
-                   top: top,
-                   topRelation: topRelation,
-                   left: left,
-                   leftRelation: leftRelation,
-                   bottom: bottom,
-                   bottomRelation: bottomRelation,
-                   right: right,
-                   rightRelation: rightRelation,
-                   padding: padding,
-                   centerX: centerX,
-                   centerXRelation: centerXRelation,
-                   centerY: centerY,
-                   centerYRelation: centerYRelation,
-                   offset: offset,
-                   width: width,
-                   widthRelation: widthRelation,
-                   height: height,
-                   heightRelation: heightRelation,
-                   multiplier: multiplier,
-                   size: size)
+        anchorView(
+            view,
+            anchors: anchors,
+            top: top,
+            topRelation: topRelation,
+            left: left,
+            leftRelation: leftRelation,
+            bottom: bottom,
+            bottomRelation: bottomRelation,
+            right: right,
+            rightRelation: rightRelation,
+            padding: padding,
+            centerX: centerX,
+            centerXRelation: centerXRelation,
+            centerY: centerY,
+            centerYRelation: centerYRelation,
+            offset: offset,
+            width: width,
+            widthRelation: widthRelation,
+            height: height,
+            heightRelation: heightRelation,
+            multiplier: multiplier,
+            size: size)
     }
 
     func anchorView(
@@ -86,32 +136,35 @@ public extension UIView {
         multiplier: CGMultiplier                        = .one,
         size: CGSize                                    = .zero) {
 
-        anchorEdges(view,
-                    sides: anchors,
-                    top: top,
-                    topRelation: topRelation,
-                    left: left,
-                    leftRelation: leftRelation,
-                    bottom: bottom,
-                    bottomRelation: bottomRelation,
-                    right: right,
-                    rightRelation: rightRelation,
-                    padding: padding)
-        anchorCenters(view,
-                      centers: anchors,
-                      centerX: centerX,
-                      centerXRelation: centerXRelation,
-                      centerY: centerY,
-                      centerYRelation: centerYRelation,
-                      offset: offset)
-        anchorSides(view,
-                    sides: anchors,
-                    width: width,
-                    widthRelation: widthRelation,
-                    height: height,
-                    heightRelation: heightRelation,
-                    multiplier: multiplier,
-                    size: size)
+        anchorEdges(
+            view,
+            sides: anchors,
+            top: top,
+            topRelation: topRelation,
+            left: left,
+            leftRelation: leftRelation,
+            bottom: bottom,
+            bottomRelation: bottomRelation,
+            right: right,
+            rightRelation: rightRelation,
+            padding: padding)
+        anchorCenters(
+            view,
+            centers: anchors,
+            centerX: centerX,
+            centerXRelation: centerXRelation,
+            centerY: centerY,
+            centerYRelation: centerYRelation,
+            offset: offset)
+        anchorSides(
+            view,
+            sides: anchors,
+            width: width,
+            widthRelation: widthRelation,
+            height: height,
+            heightRelation: heightRelation,
+            multiplier: multiplier,
+            size: size)
     }
 
     func anchorEdges(
@@ -130,32 +183,32 @@ public extension UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
 
         if sides.contains(.top) || top != nil {
-            anchor(
-                lhs: view.topAnchor,
+            view.anchor(
+                lhs: .top,
                 relation: topRelation,
                 rhs: top ?? topAnchor,
-                padding: padding.top)
+                constant: padding.top)
         }
         if sides.contains(.leading) || sides.contains(.left) || left != nil {
-            anchor(
-                lhs: view.leadingAnchor,
+            view.anchor(
+                lhs: .left,
                 relation: leftRelation,
                 rhs: left ?? leadingAnchor,
-                padding: padding.left)
+                constant: padding.left)
         }
         if sides.contains(.bottom) || bottom != nil {
-            anchor(
-                lhs: view.bottomAnchor,
+            view.anchor(
+                lhs: .bottom,
                 relation: bottomRelation,
                 rhs: bottom ?? bottomAnchor,
-                padding: padding.bottom)
+                constant: padding.bottom)
         }
         if sides.contains(.trailing) || sides.contains(.right) || right != nil {
-            anchor(
-                lhs: view.trailingAnchor,
+            view.anchor(
+                lhs: .right,
                 relation: rightRelation,
                 rhs: right ?? trailingAnchor,
-                padding: padding.right)
+                constant: padding.right)
         }
     }
 
@@ -171,18 +224,18 @@ public extension UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
 
         if centers.contains(.centerX) || centerX != nil {
-            anchor(
-                lhs: view.centerXAnchor,
+            view.anchor(
+                lhs: .centerX,
                 relation: centerXRelation,
                 rhs: centerX ?? centerXAnchor,
-                padding: offset.horizontal)
+                constant: offset.horizontal)
         }
         if centers.contains(.centerY) || centerY != nil {
-            anchor(
-                lhs: view.centerYAnchor,
+            view.anchor(
+                lhs: .centerY,
                 relation: centerYRelation,
                 rhs: centerY ?? centerYAnchor,
-                padding: offset.vertical)
+                constant: offset.vertical)
         }
     }
 
@@ -199,75 +252,132 @@ public extension UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
 
         if sides.contains(.width) || width != nil {
-            anchor(
-                lhs: view.widthAnchor,
+            view.anchor(
+                lhs: .width,
                 relation: widthRelation,
                 rhs: width ?? widthAnchor,
                 multiplier: multiplier.width,
                 constant: size.width)
         } else if size.width != 0 {
-            anchor(
-                lhs: view.widthAnchor,
+            view.anchor(
+                lhs: .width,
                 relation: widthRelation,
-                constant: size.width)
+                rhs: size.width)
         }
         if sides.contains(.height) || height != nil {
-            anchor(
-                lhs: view.heightAnchor,
+            view.anchor(
+                lhs: .height,
                 relation: heightRelation,
                 rhs: height ?? heightAnchor,
                 multiplier: multiplier.height,
                 constant: size.height)
         } else if size.height != 0 {
-            anchor(
-                lhs: view.heightAnchor,
+            view.anchor(
+                lhs: .height,
                 relation: heightRelation,
-                constant: size.height)
+                rhs: size.height)
         }
     }
 
     func anchor<Axis>(
-        lhs: NSLayoutAnchor<Axis>,
+        lhs: NSLayoutConstraint.Attribute,
         relation: NSLayoutConstraint.Relation   = .equal,
-        rhs: NSLayoutAnchor<Axis>,
-        padding: CGFloat                        = 0) {
-
+        rhs: NSLayoutAnchor<Axis>?              = nil,
+        multiplier: CGFloat                     = 1,
+        constant: CGFloat                       = 0) {
+        let lhs = anchor(for: lhs) as NSLayoutAnchor<Axis>?
         switch relation {
         case .lessThanOrEqual:
-            lhs.constraint(lessThanOrEqualTo: rhs, constant: padding).isActive = true
+            if let lhs = lhs as? NSLayoutDimension,
+                let rhs = rhs as? NSLayoutDimension {
+                lhs.constraint(
+                    lessThanOrEqualTo: rhs,
+                    multiplier: multiplier,
+                    constant: constant).isActive = true
+            } else if let rhs = rhs {
+                lhs?.constraint(
+                    lessThanOrEqualTo: rhs,
+                    constant: constant).isActive = true
+            }
         case .greaterThanOrEqual:
-            lhs.constraint(greaterThanOrEqualTo: rhs, constant: padding).isActive = true
+            if let lhs = lhs as? NSLayoutDimension,
+                let rhs = rhs as? NSLayoutDimension {
+                lhs.constraint(
+                    greaterThanOrEqualTo: rhs,
+                    multiplier: multiplier,
+                    constant: constant).isActive = true
+            } else if let rhs = rhs {
+                lhs?.constraint(
+                    greaterThanOrEqualTo: rhs,
+                    constant: constant).isActive = true
+            }
         default:
-            lhs.constraint(equalTo: rhs, constant: padding).isActive = true
+            if let lhs = lhs as? NSLayoutDimension,
+                let rhs = rhs as? NSLayoutDimension {
+                lhs.constraint(
+                    equalTo: rhs,
+                    multiplier: multiplier,
+                    constant: constant).isActive = true
+            } else if let rhs = rhs {
+                lhs?.constraint(
+                    equalTo: rhs,
+                    constant: constant).isActive = true
+            }
         }
     }
 
     func anchor(
-        lhs: NSLayoutDimension,
+        lhs: NSLayoutConstraint.Attribute,
         relation: NSLayoutConstraint.Relation   = .equal,
-        rhs: NSLayoutDimension?                 = nil,
-        multiplier: CGFloat                     = 1,
-        constant: CGFloat                       = 0) {
+        rhs: CGFloat) {
+
+        let lhs = anchor(for: lhs) as NSLayoutAnchor<NSLayoutDimension>?
 
         switch relation {
         case .lessThanOrEqual:
-            if let rhs = rhs {
-                lhs.constraint(lessThanOrEqualTo: rhs, multiplier: multiplier, constant: constant).isActive = true
-            } else {
-                lhs.constraint(lessThanOrEqualToConstant: constant).isActive = true
+            if let lhs = lhs as? NSLayoutDimension,
+                rhs != 0 {
+                lhs.constraint(
+                    lessThanOrEqualToConstant: rhs)
+                    .isActive = true
             }
         case .greaterThanOrEqual:
-            if let rhs = rhs {
-                lhs.constraint(greaterThanOrEqualTo: rhs, multiplier: multiplier, constant: constant).isActive = true
-            } else {
-                lhs.constraint(greaterThanOrEqualToConstant: constant).isActive = true
+            if let lhs = lhs as? NSLayoutDimension,
+                rhs != 0 {
+                lhs.constraint(
+                    greaterThanOrEqualToConstant: rhs)
+                    .isActive = true
             }
         default:
-            if let rhs = rhs {
-                lhs.constraint(equalTo: rhs, multiplier: multiplier, constant: constant).isActive = true
-            } else {
-                lhs.constraint(equalToConstant: constant).isActive = true
+            if let lhs = lhs as? NSLayoutDimension,
+                rhs != 0 {
+                lhs.constraint(
+                    equalToConstant: rhs)
+                    .isActive = true
             }
+        }
+    }
+
+    private func anchor<Axis>(for attribute: NSLayoutConstraint.Attribute) -> NSLayoutAnchor<Axis>? {
+        switch attribute {
+        case .left, .leading:
+            return leadingAnchor as? NSLayoutAnchor<Axis>
+        case .right, .trailing:
+            return trailingAnchor as? NSLayoutAnchor<Axis>
+        case .top:
+            return topAnchor as? NSLayoutAnchor<Axis>
+        case .bottom:
+            return bottomAnchor as? NSLayoutAnchor<Axis>
+        case .width:
+            return widthAnchor as? NSLayoutAnchor<Axis>
+        case .height:
+            return heightAnchor as? NSLayoutAnchor<Axis>
+        case .centerX:
+            return centerXAnchor as? NSLayoutAnchor<Axis>
+        case .centerY:
+            return centerYAnchor as? NSLayoutAnchor<Axis>
+        default:
+            return nil
         }
     }
 }
