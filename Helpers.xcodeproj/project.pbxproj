@@ -14,6 +14,7 @@
 		115A3C0C227643620012C02E /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C0B227643620012C02E /* UIEdgeInsetsExtensions.swift */; };
 		115A3C0E227643800012C02E /* UIOffsetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C0D227643800012C02E /* UIOffsetExtensions.swift */; };
 		115A3C10227643920012C02E /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C0F227643920012C02E /* CGSizeExtensions.swift */; };
+		115A3C12227645000012C02E /* NSObjectHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A3C11227645000012C02E /* NSObjectHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		115A3C0B227643620012C02E /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 		115A3C0D227643800012C02E /* UIOffsetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOffsetExtensions.swift; sourceTree = "<group>"; };
 		115A3C0F227643920012C02E /* CGSizeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
+		115A3C11227645000012C02E /* NSObjectHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				115A3C06227642DE0012C02E /* Layout Helpers */,
 				115A3BFB227641F80012C02E /* Helpers.h */,
 				115A3BFC227641F80012C02E /* Info.plist */,
+				115A3C11227645000012C02E /* NSObjectHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -68,12 +71,12 @@
 		115A3C06227642DE0012C02E /* Layout Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				115A3C03227642580012C02E /* UIViewLayoutHelpers.swift */,
 				115A3C07227642FA0012C02E /* CGMultiplierExtensions.swift */,
+				115A3C0F227643920012C02E /* CGSizeExtensions.swift */,
 				115A3C09227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift */,
 				115A3C0B227643620012C02E /* UIEdgeInsetsExtensions.swift */,
 				115A3C0D227643800012C02E /* UIOffsetExtensions.swift */,
-				115A3C0F227643920012C02E /* CGSizeExtensions.swift */,
+				115A3C03227642580012C02E /* UIViewLayoutHelpers.swift */,
 			);
 			path = "Layout Helpers";
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				115A3C0C227643620012C02E /* UIEdgeInsetsExtensions.swift in Sources */,
+				115A3C12227645000012C02E /* NSObjectHelpers.swift in Sources */,
 				115A3C08227642FA0012C02E /* CGMultiplierExtensions.swift in Sources */,
 				115A3C04227642580012C02E /* UIViewLayoutHelpers.swift in Sources */,
 				115A3C0A227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift in Sources */,
