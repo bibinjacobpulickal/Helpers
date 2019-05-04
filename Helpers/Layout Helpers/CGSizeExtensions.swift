@@ -6,6 +6,8 @@
 //  Copyright © 2019 Bibin Jacob Pulickal. All rights reserved.
 //
 
+import UIKit
+
 public extension CGSize {
     init(w width: CGFloat = 0, h height: CGFloat = 0) {
         self.init(width: width, height: height)

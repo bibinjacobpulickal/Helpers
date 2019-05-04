@@ -6,7 +6,7 @@
 //  Copyright © 2019 Bibin Jacob Pulickal. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension UICollectionView {
 

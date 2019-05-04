@@ -6,6 +6,8 @@
 //  Copyright © 2019 Bibin Jacob Pulickal. All rights reserved.
 //
 
+import UIKit
+
 public extension UIView {
 
     func addSubview(_ view: UIView, completion: (UIView) -> Void) {

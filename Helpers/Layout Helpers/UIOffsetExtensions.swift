@@ -6,6 +6,8 @@
 //  Copyright © 2019 Bibin Jacob Pulickal. All rights reserved.
 //
 
+import UIKit
+
 public extension UIOffset {
     init(v vertical: CGFloat = 0, h horizontal: CGFloat) {
         self.init(horizontal: horizontal, vertical: vertical)

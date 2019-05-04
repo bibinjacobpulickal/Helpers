@@ -6,6 +6,8 @@
 //  Copyright © 2019 Bibin Jacob Pulickal. All rights reserved.
 //
 
+import UIKit
+
 public extension Set where Element == NSLayoutConstraint.Attribute {
 
     static var allSides: Set<NSLayoutConstraint.Attribute> {

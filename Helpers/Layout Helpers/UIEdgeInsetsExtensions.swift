@@ -6,6 +6,8 @@
 //  Copyright © 2019 Bibin Jacob Pulickal. All rights reserved.
 //
 
+import UIKit
+
 public extension UIEdgeInsets {
     init(t top: CGFloat = 0, l left: CGFloat = 0, b bottom: CGFloat = 0, r right: CGFloat = 0) {
         self.init(top: top, left: left, bottom: bottom, right: right)
