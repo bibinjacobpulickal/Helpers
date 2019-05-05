@@ -20,6 +20,9 @@
 		11C9F0FC227F2F8800024204 /* UIViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F0FB227F2F8800024204 /* UIViewControllerProtocols.swift */; };
 		11C9F0FE227F2FE200024204 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F0FD227F2FE200024204 /* Alertable.swift */; };
 		11C9F10A227F32AB00024204 /* SubviewAddable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F109227F32AB00024204 /* SubviewAddable.swift */; };
+		11C9F10D227F36B800024204 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F10C227F36B800024204 /* ThemeColors.swift */; };
+		11C9F10F227F385100024204 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F10E227F385100024204 /* Theme.swift */; };
+		11C9F111227F387700024204 /* ThemeFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F110227F387700024204 /* ThemeFonts.swift */; };
 		11D639A5227D6BA6000ABD2E /* UIViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639A4227D6BA6000ABD2E /* UIViewHelpers.swift */; };
 		11D639A9227D6FE6000ABD2E /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639A8227D6FE6000ABD2E /* UITableViewExtensions.swift */; };
 		11D639AB227D6FFE000ABD2E /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639AA227D6FFE000ABD2E /* Reusable.swift */; };
@@ -42,6 +45,9 @@
 		11C9F0FB227F2F8800024204 /* UIViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerProtocols.swift; sourceTree = "<group>"; };
 		11C9F0FD227F2FE200024204 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		11C9F109227F32AB00024204 /* SubviewAddable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewAddable.swift; sourceTree = "<group>"; };
+		11C9F10C227F36B800024204 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
+		11C9F10E227F385100024204 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		11C9F110227F387700024204 /* ThemeFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFonts.swift; sourceTree = "<group>"; };
 		11D639A4227D6BA6000ABD2E /* UIViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelpers.swift; sourceTree = "<group>"; };
 		11D639A8227D6FE6000ABD2E /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		11D639AA227D6FFE000ABD2E /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 		115A3BFA227641F80012C02E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				11C9F10B227F369900024204 /* Theme Manager */,
 				11C9F0CE227EE7F500024204 /* UIViewControllers */,
 				11D639A7227D6E9D000ABD2E /* Reusable */,
 				11D639A6227D6E8B000ABD2E /* Initializable */,
@@ -119,6 +126,16 @@
 				11C9F0F9227F2F5100024204 /* ActivityIndicatable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		11C9F10B227F369900024204 /* Theme Manager */ = {
+			isa = PBXGroup;
+			children = (
+				11C9F10E227F385100024204 /* Theme.swift */,
+				11C9F10C227F36B800024204 /* ThemeColors.swift */,
+				11C9F110227F387700024204 /* ThemeFonts.swift */,
+			);
+			path = "Theme Manager";
 			sourceTree = "<group>";
 		};
 		11D639A3227D6B93000ABD2E /* UIView Helpers */ = {
@@ -255,13 +272,16 @@
 				11C9F0FA227F2F5100024204 /* ActivityIndicatable.swift in Sources */,
 				11C9F0D2227EE88500024204 /* UIViewControllerHelpers.swift in Sources */,
 				11C9F0FE227F2FE200024204 /* Alertable.swift in Sources */,
+				11C9F111227F387700024204 /* ThemeFonts.swift in Sources */,
 				11D639A9227D6FE6000ABD2E /* UITableViewExtensions.swift in Sources */,
 				11D639AB227D6FFE000ABD2E /* Reusable.swift in Sources */,
+				11C9F10F227F385100024204 /* Theme.swift in Sources */,
 				115A3C08227642FA0012C02E /* CGMultiplierExtensions.swift in Sources */,
 				115A3C04227642580012C02E /* UIViewLayoutHelpers.swift in Sources */,
 				115A3C0A227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift in Sources */,
 				11C9F0FC227F2F8800024204 /* UIViewControllerProtocols.swift in Sources */,
 				115A3C10227643920012C02E /* CGSizeExtensions.swift in Sources */,
+				11C9F10D227F36B800024204 /* ThemeColors.swift in Sources */,
 				115A3C0E227643800012C02E /* UIOffsetExtensions.swift in Sources */,
 				11D639AD227D7024000ABD2E /* UICollectionVIewExtensions.swift in Sources */,
 			);
