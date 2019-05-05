@@ -1,5 +1,5 @@
 //
-//  UIAlertViewController.swift
+//  ActivityIndicatable.swift
 //  Helpers
 //
 //  Created by Bibin Jacob Pulickal on 05/05/19.
@@ -8,17 +8,12 @@
 
 import UIKit
 
-extension UIViewController {
+protocol ActivityIndicatable: Presentable & Dismissable {
+    func presentActivityIndicator(completion: (() -> Void)?)
+    func dismissActivityIndicator(completion: (() -> Void)?)
+}
 
-    func showAlert(
-        title: String? = "Alert",
-        message: String? = "Something went wrong!",
-        action: ((UIAlertAction) -> Void)? = nil,
-        completion: (() -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OKAY", style: .default, handler: action))
-        present(alert, animated: true, completion: completion)
-    }
+extension ActivityIndicatable {
 
     func presentActivityIndicator(
         completion: (() -> Void)? = nil) {
@@ -37,3 +32,5 @@ extension UIViewController {
         dismiss(animated: true, completion: completion)
     }
 }
+
+extension UIViewController: ActivityIndicatable { }
