@@ -19,6 +19,7 @@
 		11C9F0FA227F2F5100024204 /* ActivityIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F0F9227F2F5100024204 /* ActivityIndicatable.swift */; };
 		11C9F0FC227F2F8800024204 /* UIViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F0FB227F2F8800024204 /* UIViewControllerProtocols.swift */; };
 		11C9F0FE227F2FE200024204 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F0FD227F2FE200024204 /* Alertable.swift */; };
+		11C9F10A227F32AB00024204 /* SubviewAddable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F109227F32AB00024204 /* SubviewAddable.swift */; };
 		11D639A5227D6BA6000ABD2E /* UIViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639A4227D6BA6000ABD2E /* UIViewHelpers.swift */; };
 		11D639A9227D6FE6000ABD2E /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639A8227D6FE6000ABD2E /* UITableViewExtensions.swift */; };
 		11D639AB227D6FFE000ABD2E /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639AA227D6FFE000ABD2E /* Reusable.swift */; };
@@ -40,6 +41,7 @@
 		11C9F0F9227F2F5100024204 /* ActivityIndicatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatable.swift; sourceTree = "<group>"; };
 		11C9F0FB227F2F8800024204 /* UIViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerProtocols.swift; sourceTree = "<group>"; };
 		11C9F0FD227F2FE200024204 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		11C9F109227F32AB00024204 /* SubviewAddable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewAddable.swift; sourceTree = "<group>"; };
 		11D639A4227D6BA6000ABD2E /* UIViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelpers.swift; sourceTree = "<group>"; };
 		11D639A8227D6FE6000ABD2E /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		11D639AA227D6FFE000ABD2E /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		11D639A3227D6B93000ABD2E /* UIView Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				11C9F109227F32AB00024204 /* SubviewAddable.swift */,
 				11D639A4227D6BA6000ABD2E /* UIViewHelpers.swift */,
 			);
 			path = "UIView Helpers";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				115A3C0C227643620012C02E /* UIEdgeInsetsExtensions.swift in Sources */,
+				11C9F10A227F32AB00024204 /* SubviewAddable.swift in Sources */,
 				115A3C12227645000012C02E /* NSObjectHelpers.swift in Sources */,
 				11D639A5227D6BA6000ABD2E /* UIViewHelpers.swift in Sources */,
 				11C9F0FA227F2F5100024204 /* ActivityIndicatable.swift in Sources */,

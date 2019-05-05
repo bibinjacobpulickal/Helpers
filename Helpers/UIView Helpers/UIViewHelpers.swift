@@ -10,10 +10,6 @@ import UIKit
 
 public extension UIView {
 
-    func addSubviews(_ views: UIView...) {
-        views.forEach { addSubview($0) }
-    }
-
     convenience init(backgroundColor: UIColor) {
         self.init()
         self.backgroundColor = backgroundColor

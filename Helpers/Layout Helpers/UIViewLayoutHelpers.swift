@@ -10,12 +10,6 @@ import UIKit
 
 public extension UIView {
 
-    func addSubview(_ view: UIView, completion: (UIView) -> Void) {
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        completion(view)
-    }
-
     func anchors(
         _ anchors: Set<NSLayoutConstraint.Attribute>    = [],
         top: NSLayoutYAxisAnchor?                       = nil,
