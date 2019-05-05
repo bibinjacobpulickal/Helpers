@@ -23,6 +23,8 @@
 		11C9F10D227F36B800024204 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F10C227F36B800024204 /* ThemeColors.swift */; };
 		11C9F10F227F385100024204 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F10E227F385100024204 /* Theme.swift */; };
 		11C9F111227F387700024204 /* ThemeFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F110227F387700024204 /* ThemeFonts.swift */; };
+		11C9F113227F503200024204 /* Notifyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F112227F503200024204 /* Notifyable.swift */; };
+		11C9F115227F5F6500024204 /* Popoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9F114227F5F6500024204 /* Popoverable.swift */; };
 		11D639A5227D6BA6000ABD2E /* UIViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639A4227D6BA6000ABD2E /* UIViewHelpers.swift */; };
 		11D639A9227D6FE6000ABD2E /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639A8227D6FE6000ABD2E /* UITableViewExtensions.swift */; };
 		11D639AB227D6FFE000ABD2E /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D639AA227D6FFE000ABD2E /* Reusable.swift */; };
@@ -48,6 +50,8 @@
 		11C9F10C227F36B800024204 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		11C9F10E227F385100024204 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		11C9F110227F387700024204 /* ThemeFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFonts.swift; sourceTree = "<group>"; };
+		11C9F112227F503200024204 /* Notifyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifyable.swift; sourceTree = "<group>"; };
+		11C9F114227F5F6500024204 /* Popoverable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popoverable.swift; sourceTree = "<group>"; };
 		11D639A4227D6BA6000ABD2E /* UIViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelpers.swift; sourceTree = "<group>"; };
 		11D639A8227D6FE6000ABD2E /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		11D639AA227D6FFE000ABD2E /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				11C9F0FB227F2F8800024204 /* UIViewControllerProtocols.swift */,
 				11C9F0FD227F2FE200024204 /* Alertable.swift */,
 				11C9F0F9227F2F5100024204 /* ActivityIndicatable.swift */,
+				11C9F112227F503200024204 /* Notifyable.swift */,
+				11C9F114227F5F6500024204 /* Popoverable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -256,7 +262,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -266,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				115A3C0C227643620012C02E /* UIEdgeInsetsExtensions.swift in Sources */,
+				11C9F115227F5F6500024204 /* Popoverable.swift in Sources */,
 				11C9F10A227F32AB00024204 /* SubviewAddable.swift in Sources */,
 				115A3C12227645000012C02E /* NSObjectHelpers.swift in Sources */,
 				11D639A5227D6BA6000ABD2E /* UIViewHelpers.swift in Sources */,
@@ -277,6 +285,7 @@
 				11D639AB227D6FFE000ABD2E /* Reusable.swift in Sources */,
 				11C9F10F227F385100024204 /* Theme.swift in Sources */,
 				115A3C08227642FA0012C02E /* CGMultiplierExtensions.swift in Sources */,
+				11C9F113227F503200024204 /* Notifyable.swift in Sources */,
 				115A3C04227642580012C02E /* UIViewLayoutHelpers.swift in Sources */,
 				115A3C0A227643210012C02E /* Set<NSLayoutConstraint.Attribute>Extensions.swift in Sources */,
 				11C9F0FC227F2F8800024204 /* UIViewControllerProtocols.swift in Sources */,
